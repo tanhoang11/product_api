@@ -38,8 +38,6 @@ public class ProductService {
         product.setImage_url(productDetails.getImage_url());
         return productRepository.save(product);
     }
-
-
     public void deleteProduct(Integer productId) {
         productRepository.deleteById(productId);
     }

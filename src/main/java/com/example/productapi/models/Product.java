@@ -102,5 +102,20 @@ public class Product {
     public void setUpdated_at(Timestamp updated_at) {
         this.updated_at = updated_at;
     }
+    // Default constructor
+    public Product() {
+    }
+
+    // Parameterized constructor
+    public Product(String product_name, String description, BigDecimal price, Integer stock, Integer category_id, String image_url, Timestamp created_at, Timestamp updated_at) {
+        this.product_name = product_name;
+        this.description = description;
+        this.price = price;
+        this.stock = stock;
+        this.category_id = category_id;
+        this.image_url = image_url;
+        this.created_at = created_at;
+        this.updated_at = updated_at;
+    }
 
 }

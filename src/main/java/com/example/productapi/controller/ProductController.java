@@ -7,14 +7,11 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import io.swagger.v3.oas.annotations.Operation;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.ui.Model;
-import org.springframework.stereotype.Controller;
 
 import java.util.List;
 
 @RestController
 @RequestMapping("/api/products")
-@Controller
 public class ProductController {
 
     @Autowired
@@ -54,11 +51,5 @@ public class ProductController {
     public ResponseEntity<Void> deleteProduct(@PathVariable Integer id) {
         productService.deleteProduct(id);
         return ResponseEntity.noContent().build();
-    }
-    @GetMapping("/")
-    public String getAllProducts(Model model) {
-        List<Product> products = productService.getAllProducts(); // Lấy dữ liệu từ database
-        model.addAttribute("products", products);
-        return "index";
     }
 }
